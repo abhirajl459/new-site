@@ -21,15 +21,17 @@
   let testRadioInput = $state("option1");
 </script>
 
-<h2>Climate change</h2>
+<h2>Climate change example</h2>
 
 <Select bind:value={city} options={cities} label="Pick a city:" />
 
 <p>
-  On average, the temperature in <b>{city}</b> has increased by {getTempChange(
-    city,
-    tempRegr,
-  )} per decade.
+  On average, the temperature in <b>{city}</b> has increased by {
+    getTempChange(
+      city,
+      tempRegr,
+    )
+  } per decade.
 </p>
 
 <Chart {city} {temp} {tempRegr} />
@@ -42,15 +44,14 @@
 
 <p>
   This project uses a simple linear regression to estimate the temperature
-  change in each city. The data comes from the Adjusted and Homogenized
-  Canadian Climate Data (AHCCD) dataset.
+  change in each city. The data comes from the Adjusted and Homogenized Canadian
+  Climate Data (AHCCD) dataset.
 </p>
 
 <p>
   To compute the regressions, we used the <a
     href="https://github.com/nshiab/simple-data-analysis"
-    >simple-data-analysis</a
-  > library.
+  >simple-data-analysis</a> library.
 </p>
 
 <CodeHighlight
@@ -88,7 +89,7 @@ export default async function crunchData(sdb: SimpleDB) {
   await temp.writeData("static/temp.json");
 }
 `}
-  />
+/>
 
 <h2>Other components</h2>
 
@@ -101,7 +102,8 @@ export default async function crunchData(sdb: SimpleDB) {
 </p>
 
 <p>
-  And there is also a component for radio buttons (<b>{testRadioInput}</b> is selected)
+  And there is also a component for radio buttons (<b>{testRadioInput}</b> is
+  selected)
 </p>
 
 <Radio
